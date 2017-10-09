@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack=require('webpack');
 module.exports={
+    watch:true,
     entry:'./entry.js',
     output:{
         path:__dirname,
@@ -28,6 +29,6 @@ module.exports={
     devServer:{
         host:"localhost",
         port:"3000",
-        hot:true
+        hot:true//启用模块热替换
     }
 }
