@@ -44,5 +44,5 @@ npm-debug.log
 #static-site#
 #用来生成demo站点所用的程序
 static-site/
-
+bundle.js
 dist/
