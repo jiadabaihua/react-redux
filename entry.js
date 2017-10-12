@@ -28,6 +28,8 @@ store=createStore(reducers);
 //     }
 //   ]
 
+
+
 const A = (props) => (
     <Bundle load={loadPage}>
         {(Container) => <Container {...props}/>}

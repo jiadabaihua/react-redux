@@ -26,7 +26,7 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# App specific
+# App specifi/
 
 node_modules/
 .tmp
