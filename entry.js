@@ -49,7 +49,7 @@ ReactDOM.render(
                 ))} */}
             {/* </div> */}
             <div>
-                <Route path={'/home'} render={()=>{
+                {/* <Route path={'/home'} render={()=>{
                     return (<Bundle load={require('bundle-loader?lazy!./src/page/home')}>
                         {(Cp1)=><Cp1></Cp1>}
                     </Bundle>)
@@ -60,7 +60,8 @@ ReactDOM.render(
                         {(Cp2)=><Cp2></Cp2>}
                     </Bundle>)
                 }} >
-                </Route>
+                </Route> */}
+                <Route path={'*'} component={Bundle} />
             </div>
         </Router>
     </Provider>
