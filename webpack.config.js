@@ -5,8 +5,8 @@ module.exports={
     // watch:true,
     entry:'./entry.js',
     output:{
-        path:__dirname,
-        filename:'./bundle.js'
+        path:path.resolve(__dirname,"dist"),//输出路径
+        filename:'bundle.js'//输出文件名
     },
     module:{
         loaders:[

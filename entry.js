@@ -11,29 +11,11 @@ import thunkMiddleware from 'redux-thunk';
 import { HashRouter as Router, Route } from "react-router-dom";
 //加载react-redux
 import { Provider } from 'react-redux';
-import reducers from './src/reducers';
+import reducers from './src/redux/moduls';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 const customMiddleware=[thunkMiddleware];
 var store=applyMiddleware(...customMiddleware)(createStore);
 store=createStore(reducers);
-
-
-
-
-
-// const Home = () => <h2>home</h2>;
-// const Detail = () =><h2>Detail</h2>;
-// const routes = [
-//     { path: '/home',
-//       component: Home
-//     },
-//     { path: '/detail',
-//       component: Detail
-//     }
-//   ]
-
-
-
 const A = (props) => (
     <Bundle load={loadPage}>
         {(Container) => <Container {...props}/>}

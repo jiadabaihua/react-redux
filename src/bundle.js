@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import App from './app.js';
 const currentPage = "$$currentPage";
-console.log(currentPage)
 class Bundle extends Component {
     // constructor(props){
     //     super(props);

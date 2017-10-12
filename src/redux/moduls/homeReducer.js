@@ -1,9 +1,13 @@
-const CHANGEVALUE="CHANGEVALUE";
-const REPO_SUCCESS="REPO_SUCCESS";
-const REPO_FAILURE="REPO_FAILURE";
-const initialState={
+import Immutable from 'immutable';
+import {
+  CHANGEVALUE,
+  REPO_SUCCESS,
+  REPO_FAILURE
+} from '../actions';
+
+const initialState=Immutable.fromJS({
     text:6
-}
+});
 export default function test(state=initialState,action={}){
     switch(action.type){
       case CHANGEVALUE:
@@ -11,7 +15,6 @@ export default function test(state=initialState,action={}){
           text:action.value
         }
       case REPO_SUCCESS:
-       console.log(action.response)
         return {
           response:action.response
         }
