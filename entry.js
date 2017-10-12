@@ -17,6 +17,10 @@ const customMiddleware=[thunkMiddleware];
 var store=applyMiddleware(...customMiddleware)(createStore);
 store=createStore(reducers);
 
+
+
+
+
 // const Home = () => <h2>home</h2>;
 // const Detail = () =><h2>Detail</h2>;
 // const routes = [
