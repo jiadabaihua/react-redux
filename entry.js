@@ -14,8 +14,8 @@ import { Provider } from 'react-redux';
 import reducers from './src/redux/moduls';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 const customMiddleware=[thunkMiddleware];
-var store=applyMiddleware(...customMiddleware)(createStore);
-store=createStore(reducers);
+var createStoreWithMiddleware=applyMiddleware(...customMiddleware)(createStore);
+var store=createStoreWithMiddleware(reducers);
 const A = (props) => (
     <Bundle load={loadPage}>
         {(Container) => <Container {...props}/>}
@@ -41,7 +41,7 @@ ReactDOM.render(
                     return (<Bundle load={require('bundle-loader?lazy!./src/page/home')}>
                         {(Cp1)=><Cp1></Cp1>}
                     </Bundle>)
-                }} >
+                }} > 
                 </Route>
                 <Route path={'/detail'} render={()=>{
                     return (<Bundle load={require('bundle-loader?lazy!./src/page/detail')}>
