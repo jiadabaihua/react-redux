@@ -1,2 +1,2 @@
-export Home from './home';
-export Detail from './detail';
+export Home from './Home';
+export Detail from './Detail';

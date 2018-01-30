@@ -7,27 +7,33 @@ import loadPage from 'bundle-loader?lazy!./src/page/home';
 import Bundle from './src/bundle';
 
 import thunkMiddleware from 'redux-thunk';
-//加载history
+// //加载history
 import { HashRouter as Router, Route } from "react-router-dom";
-//加载react-redux
+// //加载react-redux
 import { Provider } from 'react-redux';
+// //合并reducer的方法
+import combinedReducer from './src/compose/compose-reducers';
 import reducers from './src/redux/moduls';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 const customMiddleware=[thunkMiddleware];
 var createStoreWithMiddleware=applyMiddleware(...customMiddleware)(createStore);
-var store=createStoreWithMiddleware(reducers);
-const A = (props) => (
-    <Bundle load={loadPage}>
-        {(Container) => <Container {...props}/>}
-    </Bundle>
-)
+var store=createStoreWithMiddleware(combinedReducer(reducers));
+// // store.subscribe(() =>
+// //     console.log(store.getState())
+// // );
+// // store.dispatch({ type: 'CHANGEVALUE' });
 
-const RouteWithSubRoutes = (route) => (
-    <Route path={route.path} render={props => (
-      <route.component {...props} routes={route.routes}/>
-    )}/>
-  )
+// const A = (props) => (
+//     <Bundle load={loadPage}>
+//         {(Container) => <Container {...props}/>}
+//     </Bundle>
+// )
 
+// const RouteWithSubRoutes = (route) => (
+//     <Route path={route.path} render={props => (
+//       <route.component {...props} routes={route.routes}/>
+//     )}/>
+//   )
 ReactDOM.render(
     <Provider store={store}>
         <Router>

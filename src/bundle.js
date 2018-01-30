@@ -42,7 +42,7 @@ class Bundle extends Component {
 
     getPagePath(props) {
         let { match: { url } } = props || this.props;
-        let path = url.substr(1) || "home";
+        let path = url.substr(1) || "Home";
         return path;
     }
 
@@ -62,6 +62,7 @@ class Bundle extends Component {
         let { state } = this;
         let path = this.getPagePath();
         let PageComponent = state[path];
+        console.log(path)
         return (
             <App {...this.props}>
                 {PageComponent ? <PageComponent {...this.props} /> : null}
