@@ -15,7 +15,8 @@ import { Provider } from 'react-redux';
 import combinedReducer from './src/compose/compose-reducers';
 import reducers from './src/redux/moduls';
 import { createStore, applyMiddleware } from 'redux';
-const customMiddleware=[thunkMiddleware];
+import fetchMiddleware from './src/middleware/fetch';
+const customMiddleware=[thunkMiddleware,fetchMiddleware];
 var createStoreWithMiddleware=applyMiddleware(...customMiddleware)(createStore);
 var store=createStoreWithMiddleware(combinedReducer(reducers));
 // // store.subscribe(() =>

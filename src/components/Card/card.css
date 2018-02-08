@@ -1,0 +1,26 @@
+.benefits-item .abstract, .benefits-item .des, .flipper{
+    width: 360px;
+    height: 400px;
+}
+.benefits-item .abstract, .benefits-item .des{
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: .6s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.benefits-item .abstract{
+    transform: rotateY(0);
+    background-color: rgba(239,239,239,1);
+    z-index: 2;
+}
+.flipper{
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    position: relative;
+}
+.benefits-item .des{
+    transform: rotateY(-180deg);
+    background-color: rgba(223,246,246,1);
+}

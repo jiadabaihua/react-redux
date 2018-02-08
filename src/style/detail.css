@@ -1,0 +1,12 @@
+.flex-box{
+    width: 220px;
+    height: 300px;
+    display: flex;
+    -webkit-display:flex;
+    /* flex-direction: column-reverse; */
+    flex-wrap:nowrap;
+    align-items:center;
+}
+.flex-box > div{
+    flex: 1;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as allActions from '../../redux/actions';
 import {PageButton} from '../../components/index';
+import Card from '../../components/Card';
 import * as fetchApi from './api/fetchHead';
 import FetchPromise from './api/fetchMethod';
 @connect(
@@ -28,8 +29,11 @@ export default class Home extends React.Component{
         }
         this.handlePageChange=this.handlePageChange.bind(this);
     }
+    componentWillMount(){
+        
+    }
     componentDidMount(){
-        this.getHomeInfo();
+        // this.getHomeInfo();
     }
 
     getHomeInfo(){
@@ -56,6 +60,9 @@ export default class Home extends React.Component{
                             (<PageButton key={index} {...target} handlePageChange={this.handlePageChange}/>)
                         )
                     }
+                    <div>
+                        {/* <Card /> */}
+                    </div>
                </div>)
     }
     

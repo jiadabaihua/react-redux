@@ -58,11 +58,16 @@ class Bundle extends Component {
         }
     }
 
+    getPageBundle(pageName){
+        let first = pageName.substring(0,1).toUpperCase();
+        let end = pageName.substring(1,pageName.length);
+        let pages = first + end;
+        return pages;
+      }
     render() {
         let { state } = this;
         let path = this.getPagePath();
         let PageComponent = state[path];
-        console.log(path)
         return (
             <App {...this.props}>
                 {PageComponent ? <PageComponent {...this.props} /> : null}
@@ -72,7 +77,7 @@ class Bundle extends Component {
 
     loadAsyncPages(path) {
         import(
-            /* webpackMode: "lazy", webpackChunkName: "[request]" */ `./page/${path}`
+            /* webpackMode: "lazy", webpackChunkName: "[request]" */ `./page/${this.getPageBundle(path)}`
         ).then(Component => {
             this.setState({
                 [path]: Component["default"],
