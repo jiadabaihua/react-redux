@@ -7,6 +7,7 @@ export default class Detail extends React.Component{
     componentDidMount(){
         
     }
+    
     render(){
         return (<div className='flex-box'>
                     <div style={{backgroundColor:'red'}}>11111111111</div>

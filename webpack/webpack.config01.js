@@ -51,7 +51,7 @@ module.exports={
     ]
     ,devServer:{
         host:"localhost",
-        port:"3000",
+        port:"4000",
         hot:false,//启用模块热替换
         // proxy:{
         //     '/api':{
