@@ -27,7 +27,7 @@ export default class Home extends React.Component {
     this.handlePageChange = this.handlePageChange.bind(this);
   }
   componentDidMount() {
-    
+
   }
 
   handlePageChange = (e, page) => {
@@ -42,7 +42,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <div className='image-url'></div>
-        <div onClick={::this.dispatchAction}>触发action</div>
+        <button onClick={::this.dispatchAction}>触发action</button>
       </div>
     );
   }
