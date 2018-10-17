@@ -34,7 +34,9 @@ const webpackConfig={
                     plugins: ["transform-decorators-legacy"]
                 }
                 
-            }
+            },
+            { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'},
+            { test: /\.png$/, loader: "file-loader?name=images/[hash:8].[name].[ext]" }
         ]
     },
     plugins: [

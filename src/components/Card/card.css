@@ -24,3 +24,14 @@
     transform: rotateY(-180deg);
     background-color: rgba(223,246,246,1);
 }
+.container {
+    display: flex; 
+    align-items: center;        /* 垂直居中 */
+    justify-content: center;    /* 水平居中 */
+
+}
+.container div {
+    width: 100px;
+    height: 100px;
+    background-color: pink;     /* 方便看效果 */
+}  

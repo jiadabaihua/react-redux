@@ -3,11 +3,10 @@ const path = require('path');
 const webpack=require('webpack');
 const proxy =require('http-proxy-middleware') ;//引入插件
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //启动服务端代码
 // const app =require('../lib/server');
 // app.start();
-
 module.exports={
     // watch:true,
     // entry:{
@@ -17,15 +16,25 @@ module.exports={
     //         'redux',
     //     ]
     // },
-    entry:"./entry.js"
+    entry: {
+        main: './entry.js'
+      }
     ,output:{
         path:path.resolve(__dirname,"../dist"),//输出路径
-        filename:'bundle.js'//输出文件名
+        filename:'[name].js',//输出文件名
+        publicPath:'/'
     },
     module:{
         loaders:[
-            {test:/\.css$/,loader:'style-loader!css-loader'},
+            // {
+            //     test: /\.css$/, 
+            //     loader: ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap")
+            // }
             {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader?sourceMap'
+            }
+            ,{
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
                 include: path.join(__dirname,'../'),
@@ -36,12 +45,24 @@ module.exports={
                 }
                 
             }
+            // ,{
+            //     test: /\.js$/,
+            //     exclude: /(node_modules|bower_components)/,
+            //     use: {
+            //       loader: 'babel-loader',
+            //       options: {
+            //         presets: ['@babel/preset-env']
+            //       }
+            //     }
+            // }
+            ,{ test: /\.(png|jpg)$/, loader: "file-loader?name=images/[name].[ext]"}
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template:path.resolve(__dirname,'../index.html')
-        })
+        }),
+        new ExtractTextPlugin("css/[name].css",{disable: false,allChunks: true})
         // ,new webpack.optimize.CommonsChunkPlugin({
         //     name:'vendor',
         //     filename:'[name].chunk.js',
@@ -51,7 +72,7 @@ module.exports={
     ]
     ,devServer:{
         host:"localhost",
-        port:"4000",
+        port:"3000",
         hot:false,//启用模块热替换
         // proxy:{
         //     '/api':{

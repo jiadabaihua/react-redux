@@ -24,3 +24,9 @@
     height: 200px;
     background: green;
 }
+.image-url{
+    width: 100px;
+    height: 100px;
+    background: url(./empty_left.png) no-repeat;
+    background-size: contain;
+}

@@ -12,7 +12,8 @@ const initialState=Immutable.fromJS({
 });
 export default function test(state=initialState,action={}){
     switch(action.type){
-      case CHANGEVALUE:
+      case 'CHANGEVALUE':
+      debugger
         return {
           text:action.value
         }
