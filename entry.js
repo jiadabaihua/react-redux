@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './src/app';
 import loadPage from 'bundle-loader?lazy!./src/page/home';
-
 import Bundle from './src/bundle';
 
 import thunkMiddleware from 'redux-thunk';
@@ -13,6 +12,7 @@ import { Provider } from 'react-redux';
 // //合并reducer的方法
 import combinedReducer from './src/compose/compose-reducers';
 import reducers from './src/redux/moduls';
+import 'antd/dist/antd.css';
 import { createStore, applyMiddleware } from 'redux';
 import fetchMiddleware from './src/middleware/fetch';
 const customMiddleware=[thunkMiddleware,fetchMiddleware];

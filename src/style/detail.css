@@ -1,17 +1,5 @@
-.flex-box{
-    width: 220px;
-    height: 300px;
-    display: flex;
-    -webkit-display:flex;
-    /* flex-direction: column-reverse; */
-    flex-wrap:nowrap;
-    align-items:center;
-}
-.flex-box > div{
-    flex: 1;
-}
-.box div{
-    display: inline-block;
+.flex-box>div{
+    margin-top: 20px;
 }
 .left{
     width: 200px;
@@ -29,4 +17,12 @@
     height: 100px;
     background: url(./empty_left.png) no-repeat;
     background-size: contain;
+}
+.red-bgcolor{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
