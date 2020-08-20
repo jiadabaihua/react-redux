@@ -34,7 +34,7 @@
     "http-proxy-middleware": "^0.17.4",
     "molejs-ngine": "0.0.1",
     "react": "16.6.0",
-    "react-dom": "16.4.0",
+    "react-dom": "16.4.2",
     "react-redux": "5.0.7",
     "react-router-dom": "4.2.2",
     "redux": "4.0.0",
